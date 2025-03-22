@@ -83,7 +83,7 @@ const onFinish = (values) => {
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
-const RentTAb = () => {
+const BuyTab = () => {
   const [sliderValue, setSliderValue] = useState(50000);
   return (
     <>
@@ -153,10 +153,10 @@ const RentTAb = () => {
               />
             </div>
           </div>
-          <div className="ml-[100px] flex items-end justify-start">
+          <div className="ml-[100px]">
             <Button
               htmlType="submit"
-              className=" !h-[40px] w-[50px] !bg-purplecol pxy-[10px] mt-[20px] rounded-[10px] transition-colors duration-200 hover:!bg-#A08FCC flex flex-row items-center justify-center"
+              className="!h-[40px] w-[50px] !bg-purplecol pxy-[10px] mt-[20px] rounded-[10px] transition-colors duration-200 hover:!bg-#A08FCC flex flex-row items-center justify-center"
             >
               <FaSearch className="w-[20px] h-[20px] text-white" />
             </Button>
@@ -167,4 +167,4 @@ const RentTAb = () => {
   );
 };
 
-export default RentTAb;
+export default BuyTab;

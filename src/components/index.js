@@ -15,3 +15,6 @@ export { default as General } from "./AccountSetting/General.jsx";
 export { default as Choices } from "./AccountSetting/Choices.jsx";
 export { default as EditProf } from "./AccountSetting/EditProf.jsx";
 export { default as AllTabs } from "./HeroTabs/AllTabs.jsx";
+export { default as TopRated } from "./TopRated.jsx";
+export { default as WhatWeDo } from "./WhatWeDo.jsx";
+export { default as About } from "./About.jsx";

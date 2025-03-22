@@ -2,7 +2,12 @@
   justify-content: start;
   font-family: "Inter", sans-serif;
 }
-
+@media (max-width: 640px) {
+  .custom-tabs .ant-tabs-nav .ant-tabs-tab {
+    font-size: 14px; /* adjust size as needed */
+    padding: 6px 8px; /* optional: reduce padding */
+  }
+}
 .custom-tabs .ant-tabs-tab {
   font-weight: 600;
   font-size: 16px;

@@ -1,10 +1,13 @@
 import React from "react";
-import { Hero } from "../components";
+import { About, Hero, TopRated, WhatWeDo } from "../components";
 
 const Landing = () => {
   return (
     <>
       <Hero />
+      <TopRated />
+      <WhatWeDo />
+      <About />
     </>
   );
 };

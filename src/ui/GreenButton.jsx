@@ -8,7 +8,7 @@ const GreenButton = ({ text }) => {
       htmlType="submit"
       className="w-[90px] h-[35px] sm:w-[120px] sm:h-[42px] flex items-center font-semibold "
     >
-      {text}
+      <p className="text-[13px] sm:text-[15px]">{text}</p>
     </Button>
   );
 };
