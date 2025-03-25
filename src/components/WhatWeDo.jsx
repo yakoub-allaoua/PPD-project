@@ -26,7 +26,7 @@ const WhatWeDo = () => {
   return (
     <div
       ref={cardsRef}
-      className="align-element mt-[20px] sm:mt-[60px] flex flex-col items-start"
+      className="align-element mt-[30px] sm:mt-[80px] flex flex-col items-start"
     >
       <h1 className="text-[25px] font-bold sm:text-[35px] text-textblack">
         Giving you peace of mind

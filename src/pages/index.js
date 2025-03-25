@@ -7,3 +7,4 @@ export { default as Cart } from "./Cart.jsx";
 export { default as HomeLayout } from "./HomeLayout.jsx";
 export { default as Landing } from "./Landing.jsx";
 export { default as Checkout } from "./Checkout.jsx";
+export { default as ForgotPassword } from "./ForgotPassword.jsx";

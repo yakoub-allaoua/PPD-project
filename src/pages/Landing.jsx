@@ -1,5 +1,12 @@
 import React from "react";
-import { About, Hero, TopRated, WhatWeDo } from "../components";
+import {
+  About,
+  Footer,
+  Hero,
+  SayAboutUs,
+  TopRated,
+  WhatWeDo,
+} from "../components";
 
 const Landing = () => {
   return (
@@ -8,6 +15,8 @@ const Landing = () => {
       <TopRated />
       <WhatWeDo />
       <About />
+      <SayAboutUs />
+      <Footer />
     </>
   );
 };

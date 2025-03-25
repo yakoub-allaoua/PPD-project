@@ -39,19 +39,16 @@ const Login = () => {
           </Link>
         </div>
       </div>
-
+      {/*
       <div className="relative w-full h-full m">
         <div className="relative w-full h-full">
-          {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${img})` }}
           ></div>
 
-          {/* Overlay for readability */}
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
-          {/* Text at the bottom */}
           <p
             ref={textRef}
             className="font-playfair ml-[20px] absolute bottom-20 left-1/3 -translate-x-1/2 text-white text-center text-[20px]"
@@ -59,13 +56,13 @@ const Login = () => {
             "Real estate is not about buying a home, it's about investing in
             your dreams and securing your future."
             <br />
-            <span className="font-semibold"> Jhon Doe</span>
+            <span className="font-semibold">Jhon Doe</span>
           </p>
         </div>
 
-        {/* Overlay for better readability */}
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
       </div>
+      */}
     </div>
   );
 };

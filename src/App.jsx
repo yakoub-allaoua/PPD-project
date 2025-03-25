@@ -12,6 +12,7 @@ import {
   Landing,
   Login,
   SingleHouse,
+  ForgotPassword,
 } from "./pages";
 import Register from "./pages/Register";
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="deals" element={<Deals />} />
           </Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<Error />} />
         </Routes>

@@ -1,10 +1,10 @@
-import React from "react";
-import { Button, Checkbox, Form, Input, Select } from "antd";
-import { DarkButton } from "../../ui";
+import React, { useState } from "react";
+import { Form, Input } from "antd";
 import BigDarkButton from "../../ui/BigDarkButton";
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-const { Option } = Select;
+import { Link } from "react-router-dom";
+import Forgot from "./Forgot";
 
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
@@ -13,13 +13,12 @@ const onFinishFailed = (errorInfo) => {
 const onFinish = (values) => {
   console.log(values);
 };
-
 const LoginForm = () => {
   return (
     <Form
       requiredMark={false}
       name="basic"
-      layout="vertical" /* Improves label positioning */
+      layout="vertical"
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -46,7 +45,20 @@ const LoginForm = () => {
         </Form.Item>
 
         <Form.Item
-          label="Password"
+          label={
+            <div className="flex flex-row justify-between w-full gap-[160px]">
+              <p>Password</p>
+              <Link to="/forgotpassword">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("forgotPassword")}
+                  className=" text font-medium hover:underline text-[14px] text-textblack"
+                >
+                  forgot password?
+                </button>
+              </Link>
+            </div>
+          }
           name="password"
           rules={[
             { required: true, message: "Please input your password!" },

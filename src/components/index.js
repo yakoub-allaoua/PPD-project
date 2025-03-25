@@ -18,3 +18,8 @@ export { default as AllTabs } from "./HeroTabs/AllTabs.jsx";
 export { default as TopRated } from "./TopRated.jsx";
 export { default as WhatWeDo } from "./WhatWeDo.jsx";
 export { default as About } from "./About.jsx";
+export { default as SayAboutUs } from "./SayAboutUs.jsx";
+export { default as Footer } from "./Footer.jsx";
+export { default as Forgot } from "./UserAccess/Forgot.jsx";
+export { default as ForgotCode } from "./UserAccess/ForgotCode.jsx";
+export { default as DashBoard } from "./DashBoard.jsx";

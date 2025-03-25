@@ -5,7 +5,7 @@ import AllTabs from "./HeroTabs/AllTabs";
 const Hero = () => {
   return (
     <>
-      <div className="align-element flex-col items-center w-[380px] sm:w-auto rounded-[30px] bg-bggreen mt-[60px] sm:mt-[110px] p-[15px] sm:p-[40px]">
+      <div className="align-element flex-col items-center w-[380px] sm:w-auto rounded-[30px] bg-bggreen mt-[60px] sm:mt-[80px] p-[15px] sm:p-[40px]">
         <div className="flex flex-col items-center sm:items-start justify-center gap-[20px]">
           <h1 className="sm:mt-[40px] font-bold text-[27px] sm:text-[40px] text-textblack tracking-wide">
             Easily buy, rent or list your property <br /> with{" "}
