@@ -23,3 +23,6 @@ export { default as Footer } from "./Footer.jsx";
 export { default as Forgot } from "./UserAccess/Forgot.jsx";
 export { default as ForgotCode } from "./UserAccess/ForgotCode.jsx";
 export { default as DashBoard } from "./DashBoard.jsx";
+export { default as EditPic } from "./AccountSetting/EditProf.jsx";
+export { default as UpdateInfoForm } from "./UserAccess/UpdateInfoForm.jsx";
+export { default as ResetPass } from "./AccountSetting/ResetPass.jsx";
