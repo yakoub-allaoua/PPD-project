@@ -4,3 +4,4 @@ export { default as PurpleButton } from "./PurpleButton";
 export { default as BlueButton } from "./BlueButton";
 export { default as RedButton } from "./RedButton";
 export { default as BigRedButton } from "./BigRedButton";
+export { default as SmallRedButton } from "./SmallRedButton";

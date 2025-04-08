@@ -73,11 +73,7 @@ const EditProf = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center sm:flex-row sm:gap-[100px] sm:items-center">
-      <div className="mt-[40px]">
-        <UpdateInfoForm />
-      </div>
-
+    <div className="flex flex-col items-center md:flex-row justify-between w-full md:px-[300px] ">
       {/* Profile Picture Container */}
       <div className="relative flex flex-col items-center">
         <div className="rounded-full w-[180px] h-[180px] flex items-center justify-center border-2 border-greencol overflow-hidden">
@@ -100,6 +96,9 @@ const EditProf = () => {
             <MdModeEdit className="w-[24px] h-[24px] text-textgray" />
           </div>
         </Dropdown>
+      </div>
+      <div className="mt-[40px]">
+        <UpdateInfoForm />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import themeConfig from "./ui/ThemeConfig";
 import { ConfigProvider } from "antd";
-import { NavBar } from "./components";
+import { EditProf, NavBar, ResetPass } from "./components";
 import Error from "./components/Error/Error";
 import {
   AllHouses,
@@ -13,6 +13,7 @@ import {
   Login,
   SingleHouse,
   ForgotPassword,
+  Dash,
 } from "./pages";
 import Register from "./pages/Register";
 
@@ -29,6 +30,10 @@ function App() {
             <Route path="checkout" element={<Checkout />} />
             <Route path="cart" element={<Cart />} />
             <Route path="deals" element={<Deals />} />
+            <Route path="/dashboard" element={<Dash />}>
+              <Route path="editProfile" element={<EditProf />} />
+              <Route path="resetPassword" element={<ResetPass />} />
+            </Route>
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />

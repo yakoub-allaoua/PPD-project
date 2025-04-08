@@ -6,6 +6,7 @@ const links = [
   { id: 2, url: "cart", text: "cart" },
   { id: 3, url: "checkout", text: "checkout" },
   { id: 4, url: "allhouses", text: "houses" },
+  { id: 5, url: "dashboard", text: "dash" },
 ];
 
 const NavLinks = () => {

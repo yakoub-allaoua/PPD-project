@@ -8,3 +8,4 @@ export { default as HomeLayout } from "./HomeLayout.jsx";
 export { default as Landing } from "./Landing.jsx";
 export { default as Checkout } from "./Checkout.jsx";
 export { default as ForgotPassword } from "./ForgotPassword.jsx";
+export { default as Dash } from "./Dash.jsx";

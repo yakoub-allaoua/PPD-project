@@ -1,13 +1,7 @@
 import React from "react";
-import { Button, Checkbox, Form, Input, Select } from "antd";
-import { DarkButton, GreenButton } from "../../ui";
-import BigDarkButton from "../../ui/BigDarkButton";
+import { Button, Form, Input } from "antd";
 import { FaLock } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdDriveFileRenameOutline } from "react-icons/md";
-const { Option } = Select;
-
+import { MdHome } from "react-icons/md"; // Home icon
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
@@ -15,22 +9,19 @@ const onFinishFailed = (errorInfo) => {
 const onFinish = (values) => {
   console.log(values);
 };
-const user = {
-  name: "yaakoub",
-  email: "yakoub@gmail.com",
-  phone: "0795802365",
-  password: "anayakoub2",
-};
+
 const ResetPass = () => {
   return (
     <Form
       requiredMark={false}
       name="update-info"
       layout="vertical"
-      onFinish={onFinish} // Function to handle update submission
+      onFinish={onFinish}
       autoComplete="off"
-      className="flex flex-col items-center w-full"
+      className="flex flex-col items-center w-full md:mt-[50px] md:mr-[60px] "
     >
+      {/* Home icon and HomeDZ title */}
+
       <div>
         <Form.Item
           label="Current password"
@@ -63,7 +54,7 @@ const ResetPass = () => {
               <FaLock className="text-greencol w-[20px] h-[17px] mr-[12px]" />
             }
             className="h-[50px] w-[320px]"
-            placeholder="newPassword"
+            placeholder="New Password"
           />
         </Form.Item>
         <Form.Item
@@ -93,7 +84,7 @@ const ResetPass = () => {
           variant="solid"
         >
           <p className="font-bold text-[16px]">Reset</p>
-        </Button>{" "}
+        </Button>
       </div>
     </Form>
   );
