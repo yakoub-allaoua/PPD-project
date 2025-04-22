@@ -112,7 +112,7 @@ const TopRated = () => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <>
-      <div className="mt-[30px] sm:mt-[80px] align-element flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between  ">
+      <div className="mt-[20px] align-element flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between  ">
         <div>
           <h1
             ref={titleRef}

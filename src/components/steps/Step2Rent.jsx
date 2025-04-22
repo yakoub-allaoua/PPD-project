@@ -69,41 +69,52 @@ const Step2Rent = () => {
           <div ref={formRef}>
             <RentForm />
           </div>
-          <div ref={infoRef} className="flex flex-col items-start gap-[15px]">
-            <h2 className="text-textblack text-[16px] font-semibold">
-              Rental start date
-            </h2>
-            <DatePicker
-              style={{
-                width: 200,
-                height: 35,
-              }}
-              onChange={onChange}
-            />
-            <h2 className="text-textblack text-[16px] font-semibold mt-[15px]">
-              Rental duration
-            </h2>
-            <Select
-              defaultValue={3}
-              style={{
-                width: 200,
-                height: 35,
-              }}
-              allowClear
-              options={options}
-              onChange={handleChange}
-            />
-            <div className="flex flex-col items-start gap-[10px] mt-[35px]">
-              <h1 className="text-[18px] text-purplecol font-semibold">
-                rent price :
-                <span className="font-medium text-textblack">{rentPrice}</span>
-                DA
-              </h1>
-              <h1 className="text-[18px] text-purplecol font-semibold">
-                total :
-                <span className="font-medium text-textblack ">{total} </span>
-                DA
-              </h1>
+          <div
+            ref={infoRef}
+            className="bg-white shadow-md rounded-2xl p-6 w-full max-w-md flex flex-col gap-6 border border-gray-100"
+          >
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Rental Start Date
+              </label>
+              <DatePicker
+                style={{
+                  width: "100%",
+                  height: "40px",
+                  borderRadius: "0.5rem",
+                }}
+                onChange={onChange}
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Rental Duration
+              </label>
+              <Select
+                defaultValue={3}
+                allowClear
+                options={options}
+                onChange={handleChange}
+                className="w-full"
+                style={{
+                  height: "40px",
+                  borderRadius: "0.5rem",
+                }}
+              />
+            </div>
+
+            <div className="pt-4 border-t border-gray-200 flex flex-col gap-2">
+              <div className="text-base font-medium text-gray-600">
+                Rent Price:{" "}
+                <span className="text-gray-900 font-semibold">
+                  {rentPrice} DA
+                </span>
+              </div>
+              <div className="text-base font-medium text-gray-600">
+                Total:{" "}
+                <span className="text-gray-900 font-semibold">{total} DA</span>
+              </div>
             </div>
           </div>
         </div>

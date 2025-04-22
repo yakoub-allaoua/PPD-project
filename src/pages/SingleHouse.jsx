@@ -54,25 +54,25 @@ const SingleHouse = () => {
               </h1>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-[18px] items-center w-auto  ">
-              <div className="bg-bggreen px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
+              <div className="bg-bggreen2 px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
                 <IoBed className="w-[20px] h-[20px] " />
                 <p className="text-[13px] font-semibold ">
                   {house.numOfRooms} bedroom
                 </p>
               </div>
-              <div className="bg-bggreen px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
+              <div className="bg-bggreen2 px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
                 <FaBath className="w-[18px] h-[16px] " />
                 <p className="text-[13px] font-semibold ">
                   {house.numOfBathroom} bathroom
                 </p>
               </div>
-              <div className="bg-bggreen px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
+              <div className="bg-bggreen2 px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
                 <FaKitchenSet className="w-[18px] h-[18px] " />
                 <p className="text-[13px] font-semibold ">
                   {house.numOfKitchen} kitchen
                 </p>
               </div>
-              <div className="bg-bggreen px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
+              <div className="bg-bggreen2 px-[16px] py-[8px] text-greencol rounded-[8px] flex flex-row gap-[8px]">
                 <TbArrowsDiagonal2 className="w-[18px] h-[18px] " />
                 <p className="text-[13px] font-semibold ">{house.Area} m²</p>
               </div>

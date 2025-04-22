@@ -2,15 +2,21 @@ import React from "react";
 import { Button, Form, Input } from "antd";
 import { FaLock } from "react-icons/fa";
 import { MdHome } from "react-icons/md"; // Home icon
+import { useDispatch } from "react-redux";
+import { UpdatePassword } from "../../features/user/userAPI";
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
-const onFinish = (values) => {
-  console.log(values);
-};
-
 const ResetPass = () => {
+  const dispatch = useDispatch();
+  const onFinish = (values) => {
+    const { password, newPassword, ConfirmNewPassword } = values;
+    const token = localStorage.getItem("token");
+    dispatch(
+      UpdatePassword({ token, password, newPassword, ConfirmNewPassword })
+    );
+  };
   return (
     <Form
       requiredMark={false}

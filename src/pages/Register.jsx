@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import img from "../assets/loginpage.jpg";
-import LoginForm from "../components/UserAccess/LoginForm";
-import Title from "../components/Title";
 import gsap from "gsap";
 import RegisterForm from "../components/UserAccess/RegisterForm";
 import { Link } from "react-router-dom";
+import { BigSecGreen } from "../ui";
+import { Footer, NavLog, SecFooter } from "../components";
+import img from "../assets/pls.png";
 const Register = () => {
-  const textRef = useRef(null);
+  const imageRef = useRef(null);
   useEffect(() => {
-    gsap.from(textRef.current, {
-      x: 200,
+    gsap.from(imageRef.current, {
+      x: 300,
       duration: 1,
       ease: "power2.out",
     });
@@ -22,55 +22,50 @@ const Register = () => {
       ease: "power2.out",
     });
   });
-
   return (
-    <div className="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 h-screen">
-      {/* Form Section */}
-      <div
-        ref={formRef}
-        className="flex flex-col items-center justify-start mt-[70px] gap-[20px] p-8"
-      >
-        <h1 className="text-3xl font-bold text-gray-800 text-center ">
-          Sign up
-        </h1>
-        <RegisterForm />
-        <div className="flex flex-row gap-[10px] items-center ">
-          <p className="text-textblack ">already a member ? </p>
-
-          <Link to="/login" className="text-purplecol hover:underline">
-            sign in
-          </Link>
-        </div>
-      </div>
-
-      {/* Background Image Section (Hidden on Small Screens) */}
-      <div className="relative w-full h-full hidden md:block">
-        <div className="relative w-full h-full">
-          {/* Background Image */}
+    <>
+      <NavLog />
+      <div className="h-[430px]  bg-bggreen  mt-[5px]">
+        <div className="align-element flex flex-row items-start justify-center">
           <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${img})` }}
-          ></div>
-
-          {/* Overlay for readability */}
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-
-          {/* Text at the bottom */}
-
-          <p
-            ref={textRef}
-            className="font-playfair ml-[20px] absolute bottom-20 left-1/3 -translate-x-1/2 text-white text-center text-[20px]"
+            ref={formRef}
+            className="bg-white flex flex-col items-start justify-start h-auto sm:mt-[50px] rounded-[10px] shadow-md gap-[20px] p-8"
           >
-            "Real estate is not about buying a home, it's about investing in
-            your dreams and securing your future."
-            <br />
-            <span className="font-semibold"> Jhon Doe</span>
-          </p>
-        </div>
+            <h1 className="text-2xl font-bold text-gray-800 ">
+              create an account to get started!
+            </h1>
+            <RegisterForm />
+            <div className="flex items-center gap-4 w-full my-4">
+              <div className="h-px bg-textgray flex-grow" />
+              <span className="text-textgray text-sm">or</span>
+              <div className="h-px bg-textgray flex-grow" />
+            </div>
+            <BigSecGreen text={<p>continue with google</p>} />
 
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+            <div className="flex flex-row gap-[10px] items-center ">
+              <p className="text-textblack text-[15px] ">already a member ? </p>
+
+              <Link to="/login" className="text-greencol hover:underline">
+                log in
+              </Link>
+            </div>
+          </div>
+          <img
+            ref={imageRef}
+            className="w-[600px] h-[400px] hidden lg:block ml-[50px]"
+            src={img}
+          />
+        </div>
       </div>
-    </div>
+      <div className="flex flex-row justify-end  align-element mt-[50px] mr-[200px]   ">
+        <div className="hidden lg:block">
+          <SecFooter />
+        </div>
+      </div>
+      <div className="lg:hidden mt-[330px]">
+        <Footer />
+      </div>
+    </>
   );
 };
 

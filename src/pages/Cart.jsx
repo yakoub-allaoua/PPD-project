@@ -1,11 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { DashBoard, FavoriteHouse } from "../components";
+import {
+  All,
+  DashBoard,
+  FavoriteHouse,
+  Filters,
+  NavDash,
+  Step,
+} from "../components";
+import SingleHouse from "./SingleHouse";
 
 const Cart = () => {
   return (
-    <div className="mt-[100px]">
-      <FavoriteHouse />
+    <div className="mt-[150px] align-element">
+      <All />
     </div>
   );
 };

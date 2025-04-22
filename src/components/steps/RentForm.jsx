@@ -28,7 +28,7 @@ const RentForm = () => {
       autoComplete="off"
       className="flex flex-col items-center w-full"
     >
-      <div>
+      <div className="">
         <Form.Item
           label="full name"
           name="fullName"
@@ -39,10 +39,7 @@ const RentForm = () => {
           className="w-full"
         >
           <Input
-            prefix={
-              <MdDriveFileRenameOutline className="text-greencol w-[20px] h-[18px] mr-[12px]" />
-            }
-            className="h-[50px] w-[300px]"
+            className="h-[50px] w-[300px] sm:w-[420px]"
             placeholder="full name"
           />
         </Form.Item>
@@ -56,10 +53,7 @@ const RentForm = () => {
           className="w-full"
         >
           <Input
-            prefix={
-              <MdEmail className="text-greencol w-[20px] h-[18px] mr-[12px]" />
-            }
-            className="h-[50px] w-[300px]"
+            className="h-[50px] w-[300px] sm:w-[420px]"
             placeholder="E-mail"
           />
         </Form.Item>
@@ -74,16 +68,20 @@ const RentForm = () => {
           className="w-full"
         >
           <Input
-            prefix={
-              <FaPhoneAlt className="text-greencol w-[20px] h-[18px] mr-[12px]" />
-            }
-            className="h-[50px] w-[300px]"
+            className="h-[50px] w-[300px] sm:w-[420px]"
             placeholder="phone number"
           />
         </Form.Item>
       </div>
       <div className="mt-4 w-full flex justify-center">
-        <DarkButton text="confirm" />
+        <Button
+          variant="solid"
+          color="primary"
+          className="w-[300px] sm:w-[420px] h-[50px]"
+          text="confirm"
+        >
+          Continue
+        </Button>
       </div>
     </Form>
   );

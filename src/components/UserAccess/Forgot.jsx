@@ -49,7 +49,7 @@ const Forgot = () => {
             prefix={
               <MdEmail className="text-greencol w-[20px] h-[18px] mr-[12px]" />
             }
-            className="h-[50px] w-[340px]"
+            className="h-[50px] w-[340px] sm:w-[500px]"
             placeholder="E-mail"
           />
         </Form.Item>

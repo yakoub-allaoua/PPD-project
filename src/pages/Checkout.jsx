@@ -1,10 +1,11 @@
 import React from "react";
 import SingleHouse from "./SingleHouse";
-import { General, ResetPass } from "../components";
+import { EditProf, General, ResetPass } from "../components";
 
 const Checkout = () => {
   return (
     <div className="m-[80px]">
+      <EditProf />
       <ResetPass />
     </div>
   );

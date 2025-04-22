@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, Input, Typography } from "antd";
 import BigDarkButton from "../../ui/BigDarkButton";
-
+import { useRef, useEffect } from "react";
+import gsap from "gsap"; // Make sure gsap is imported
 const { Title } = Typography;
 
 const onInput = (value) => {
@@ -26,8 +27,17 @@ const sharedProps = {
 };
 
 const ForgotCode = () => {
+  const formRef = useRef(null);
+  useEffect(() => {
+    gsap.from(formRef.current, {
+      x: -300,
+      duration: 1,
+      ease: "power2.out",
+    });
+  });
   return (
     <Form
+      ref={formRef}
       requiredMark={false}
       name="basic"
       layout="vertical"
@@ -35,7 +45,7 @@ const ForgotCode = () => {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
-      className="flex mt-[30px] flex-col items-center w-full"
+      className="flex mt-[10px] flex-col items-center w-full"
     >
       {" "}
       <h1 className="mb-[20px] font-medium">

@@ -8,7 +8,7 @@ import { BiLogoGmail } from "react-icons/bi";
 
 const Footer = () => {
   return (
-    <footer className="bg-bggreen text-textblack py-10 mt-[80px]">
+    <footer className="bg-bggreen2 text-textblack py-10 mt-[80px]">
       <div className="align-element grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand Info */}
         <div>

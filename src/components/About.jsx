@@ -35,7 +35,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-bggreen py-[40px] px-[20px] mt-[30px] sm:mt-[80px]">
+    <div className="bg-bggreen2 py-[40px] px-[20px] mt-[30px] sm:mt-[80px]">
       <div className="align-element  flex flex-col lg:flex-row items-center lg:items-start gap-[40px] lg:gap-[60px] justify-center">
         <div
           ref={imageRef}

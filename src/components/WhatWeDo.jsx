@@ -34,7 +34,7 @@ const WhatWeDo = () => {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-[20px] sm:gap-x-[80px] sm:gap-y-[40px] mt-6">
         {/* Comfortable */}
-        <div className="bg-bggreen p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
+        <div className="bg-bggreen2 p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
           <AiFillHeart className="w-[25px] h-[25px] text-greencol" />
           <h1 className="text-[18px] font-bold text-textblack">Comfortable</h1>
           <p className="text-textgray text-[14px]">
@@ -43,7 +43,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Security */}
-        <div className="bg-bggreen p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
+        <div className="bg-bggreen2 p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
           <MdGppGood className="w-[25px] h-[25px] text-greencol" />
           <h1 className="text-[18px] font-bold text-textblack">Security</h1>
           <p className="text-textgray text-[14px]">
@@ -53,7 +53,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Luxury */}
-        <div className="bg-bggreen p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
+        <div className="bg-bggreen2 p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
           <FaStar className="w-[25px] h-[25px] text-greencol" />
           <h1 className="text-[18px] font-bold text-textblack">Luxury</h1>
           <p className="text-textgray text-[14px]">
@@ -63,7 +63,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Best Prices */}
-        <div className="bg-bggreen p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
+        <div className="bg-bggreen2 p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
           <TbZoomMoney className="w-[25px] h-[25px] text-greencol" />
           <h1 className="text-[18px] font-bold text-textblack">Best Prices</h1>
           <p className="text-textgray text-[14px]">
@@ -73,7 +73,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Strategic Location */}
-        <div className="bg-bggreen p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
+        <div className="bg-bggreen2 p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
           <IoLocationSharp className="w-[25px] h-[25px] text-greencol" />
           <h1 className="text-[18px] font-bold text-textblack">
             Strategic Location
@@ -84,7 +84,7 @@ const WhatWeDo = () => {
         </div>
 
         {/* Variety of Properties */}
-        <div className="bg-bggreen p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
+        <div className="bg-bggreen2 p-[20px] rounded-[25px] flex flex-col gap-[10px] items-start">
           <FaBuilding className="w-[20px] h-[20px] text-greencol" />
           <h1 className="text-[18px] font-bold text-textblack">
             Variety of Properties
