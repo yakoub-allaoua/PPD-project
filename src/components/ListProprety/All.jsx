@@ -1,35 +1,67 @@
 import React, { useState } from "react";
-import { Button, Steps, theme } from "antd";
+import { useSelector } from "react-redux";
+
+import { Button, Steps, theme, message } from "antd";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import FirstStep from "./FirsStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 import FourthStep from "./FourthStep";
-
-const steps = [
-  {
-    title: <span className="text-base font-medium"> </span>,
-    content: <FirstStep />,
-  },
-  {
-    title: <span className="text-base font-medium"> </span>,
-    content: <SecondStep />,
-  },
-  {
-    title: <span className="text-base font-medium"> </span>,
-    content: <ThirdStep />,
-  },
-  {
-    title: <span className="text-base font-medium"> </span>,
-    content: <FourthStep />,
-  },
-  { title: <span className="text-base font-medium"> </span> },
-  { title: <span className="text-base font-medium"> </span> },
-];
-
+import FifthStep from "./FifthStep";
+import Congratulations from "./Congratulations";
+import SixthStep from "./SixthStep";
 const All = () => {
   const { token } = theme.useToken();
   const [current, setCurrent] = useState(0);
+  const owner_Id = useSelector((state) => state.user.userInfo?.user?.id);
+  console.log(owner_Id);
+  const [fileList, setFileList] = useState([]);
+  const [formData, setFormData] = useState({
+    owner_id: owner_Id,
+    for_rent: false,
+    price: "",
+    location: "",
+    description: "",
+    type: "",
+    area: "",
+    numOfRooms: "",
+    numOfBathroom: "",
+    numOfKitchen: "",
+    garageCapacity: "",
+    camera: false,
+    firstAidKit: false,
+    fireExtinguisher: false,
+    alarmsAndSecurity: false,
+    parking: false,
+    pool: false,
+    sportSale: false,
+    elevator: false,
+    cleaning: false,
+    petsAllowed: false,
+    wifi: false,
+    electricity: false,
+    gaz: false,
+    water: false,
+    television: false,
+    dishwasher: false,
+    washingMachine: false,
+    microwave: false,
+    fridge: false,
+    closeToTransportation: false,
+    natureView: false,
+    closeToBeach: false,
+    closeToSchool: false,
+    closeToSupermarket: false,
+    garden: false,
+    balcony: false,
+  });
+  const updateFormData = (newData) => {
+    setFormData((prev) => {
+      const updatedFormData = { ...prev, ...newData };
+      console.log("Updated formData:", updatedFormData); // Log the updated formData
+      return updatedFormData;
+    });
+  };
 
   const next = () => {
     setCurrent(current + 1);
@@ -40,6 +72,36 @@ const All = () => {
     setCurrent(current - 1);
     message.info("Moved to previous step!");
   };
+  const steps = [
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <FirstStep updateFormData={updateFormData} data={formData} />,
+    },
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <SecondStep updateFormData={updateFormData} data={formData} />,
+    },
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <ThirdStep updateFormData={updateFormData} data={formData} />,
+    },
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <FourthStep updateFormData={updateFormData} data={formData} />,
+    },
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <FifthStep fileList={fileList} setFileList={setFileList} />,
+    },
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <SixthStep />,
+    },
+    {
+      title: <span className="text-base font-medium"> </span>,
+      content: <Congratulations formData={formData} fileList={fileList} />,
+    },
+  ];
 
   const items = steps.map((item, index) => ({
     key: index,
@@ -86,23 +148,16 @@ const All = () => {
       <div style={contentStyle}>{steps[current].content}</div>
 
       <div
-        className="flex flex-row items-center justify-center gap-[20px]"
+        className="flex flex-row items-center justify-center mt-[-10px] "
         style={{ marginTop: 24 }}
       >
-        {current > 0 && (
-          <Button
-            onClick={prev}
-            className="!bg-textblack !text-white transition-colors hover:!bg-secblack w-[120px] h-[50px] rounded-[25px]"
-          >
-            <FaArrowLeftLong className="text-white w-[20px] h-[20px]" />
-          </Button>
-        )}
         {current < steps.length - 1 && (
           <Button
             onClick={next}
             className="!bg-textblack !text-white transition-colors hover:!bg-secblack w-[120px] h-[50px] rounded-[25px]"
           >
-            <FaArrowRightLong className="text-white w-[20px] h-[20px]" />
+            {" "}
+            continue
           </Button>
         )}
       </div>

@@ -6,6 +6,7 @@ import defaultPic from "../../assets/user1.png";
 
 const EditProf = () => {
   const [imageUrl, setImageUrl] = useState(defaultPic);
+  const [selectedImageFile, setSelectedImageFile] = useState(null);
 
   // Handle file upload
   const handleUpload = ({ file }) => {
@@ -13,6 +14,7 @@ const EditProf = () => {
     reader.onload = () => {
       setImageUrl(reader.result); // Update profile picture
       message.success("Profile picture updated!");
+      selectedImageFile(file);
     };
     reader.readAsDataURL(file);
   };
@@ -98,7 +100,7 @@ const EditProf = () => {
         </Dropdown>
       </div>
       <div className="mt-[40px]">
-        <UpdateInfoForm />
+        <UpdateInfoForm imageFile={selectedImageFile} />
       </div>
     </div>
   );

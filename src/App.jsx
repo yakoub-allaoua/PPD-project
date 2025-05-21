@@ -29,6 +29,7 @@ import {
 } from "./pages";
 import Register from "./pages/Register";
 import UsersTable from "./components/admin/adminComponents/UsersTable";
+import { Toaster } from "react-hot-toast";
 function App() {
   const location = useLocation();
   const hideNav = ["/login", "/register", "/forgotpassword"];
@@ -37,7 +38,7 @@ function App() {
     location.pathname.startsWith("/admindash");
   return (
     <ConfigProvider theme={themeConfig}>
-      {!shouldHideNav && <NavBar />}
+      <Toaster position="right-bottom" /> {!shouldHideNav && <NavBar />}
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Landing />} />

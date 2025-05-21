@@ -6,6 +6,7 @@ import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdDriveFileRenameOutline } from "react-icons/md";
+import { useSelector } from "react-redux";
 const { Option } = Select;
 
 const onFinishFailed = (errorInfo) => {
@@ -15,12 +16,10 @@ const onFinishFailed = (errorInfo) => {
 const onFinish = (values) => {
   console.log(values);
 };
-const user = {
-  name: "yaakoub",
-  email: "yakoub@gmail.com",
-  phone: "0795802365",
-};
-const UpdateInfoForm = () => {
+const UpdateInfoForm = ({ imageFile }) => {
+  const user = useSelector((state) => state.user.userInfo);
+  console.log(user);
+  console.log(user.phonenum);
   return (
     <Form
       requiredMark={false}
@@ -29,7 +28,7 @@ const UpdateInfoForm = () => {
       initialValues={{
         name: user.name || "",
         email: user.email || "",
-        phone: user.phone || "",
+        phonenum: user.phonenum || "",
       }}
       onFinish={onFinish} // Function to handle update submission
       autoComplete="off"
@@ -69,7 +68,7 @@ const UpdateInfoForm = () => {
 
         <Form.Item
           label="Phone number"
-          name="phone"
+          name="phonenum"
           rules={[
             {
               pattern: /^[0-9+ ]+$/,

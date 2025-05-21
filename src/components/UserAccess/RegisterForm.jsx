@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Checkbox, Form, Input, Select } from "antd";
 import { DarkButton } from "../../ui";
 import BigDarkButton from "../../ui/BigDarkButton";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signUpUser } from "../../features/user/userAPI";
-
+import toast from "react-hot-toast";
 const { Option } = Select;
+import { useEffect } from "react";
+import { GrStatusGood } from "react-icons/gr";
 
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
@@ -16,11 +18,22 @@ const onFinishFailed = (errorInfo) => {
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const { userInfo, error } = useSelector((state) => state.user);
   const onFinish = (values) => {
-    const { name, email, phone, password, passwordConfirm } = values;
+    const {
+      username,
+      firstname,
+      lastname,
+      email,
+      phone,
+      password,
+      passwordConfirm,
+    } = values;
     const userData = {
-      name,
+      username,
+      firstname,
+      lastname,
       email,
       phone,
       password,
@@ -29,7 +42,21 @@ const RegisterForm = () => {
     };
     dispatch(signUpUser(userData));
   };
-
+  useEffect(() => {
+    if (userInfo && hasSubmitted) {
+      toast.custom(
+        <div className="bg-white border-[1px] border-greencol p-[20px] flex flex-col items-start gap-[25pxs] rounded-[20px] w-[100px] sm:w-[380px] h-[100px]  mr-[10px] ">
+          <div className="flex flex-row items-center justify-center gap-[10px]">
+            <GrStatusGood className="text-greencol w-[27px] h-[27px]" />
+            <p className="text-greencol font-semibold">
+              Account created successfully
+            </p>
+          </div>
+        </div>
+      );
+      setHasSubmitted(false);
+    }
+  }, [userInfo, error]);
   return (
     <Form
       requiredMark={false}
@@ -43,8 +70,22 @@ const RegisterForm = () => {
     >
       <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-[30px] md:mt-[5px]">
         <Form.Item
-          label="Name"
-          name="name"
+          label="Username"
+          name="username"
+          rules={[{ required: true, message: "Please input your username!" }]}
+          className="w-full"
+        >
+          <Input
+            prefix={
+              <FaUserAlt className="text-greencol w-[17px] h-[17px] mr-[12px]" />
+            }
+            className="h-[50px] w-[340px] sm:w-[240px]"
+            placeholder="username"
+          />
+        </Form.Item>
+        <Form.Item
+          label="First Name"
+          name="firstname"
           rules={[{ required: true, message: "Please input your name!" }]}
           className="w-full"
         >
@@ -53,7 +94,21 @@ const RegisterForm = () => {
               <FaUserAlt className="text-greencol w-[17px] h-[17px] mr-[12px]" />
             }
             className="h-[50px] w-[340px] sm:w-[240px]"
-            placeholder="Full Name"
+            placeholder="First Name"
+          />
+        </Form.Item>
+        <Form.Item
+          label="Last Name"
+          name="lastname"
+          rules={[{ required: true, message: "Please input your name!" }]}
+          className="w-full"
+        >
+          <Input
+            prefix={
+              <FaUserAlt className="text-greencol w-[17px] h-[17px] mr-[12px]" />
+            }
+            className="h-[50px] w-[340px] sm:w-[240px]"
+            placeholder="Last Name"
           />
         </Form.Item>
         <Form.Item

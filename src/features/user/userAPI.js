@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const loginUser = createAsyncThunk(
   "user/login",
-  async (Credentials, thunkAPI) => {
+  async (Credentials, thunkAPI, rejectWithValue) => {
     try {
       const response = await axios.post(
         "http://127.0.0.1:3000/api/v1/users/login",
@@ -12,7 +12,9 @@ export const loginUser = createAsyncThunk(
       console.log(response);
       return response.data; // Return the response data to be used in `fulfilled`
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data.message); // Reject with error message
+      return rejectWithValue(
+        error.response?.data?.message || "Login failed. Please try again."
+      );
     }
   }
 );

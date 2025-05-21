@@ -46,3 +46,7 @@ export { default as All } from "./ListProprety/All.jsx";
 export { default as FirstStep } from "./ListProprety/FirsStep.jsx";
 export { default as SecondStep } from "./ListProprety/SecondStep.jsx";
 export { default as ThirdStep } from "./ListProprety/ThirdStep.jsx";
+export { default as FourthStep } from "./ListProprety/FourthStep.jsx";
+export { default as FifthStep } from "./ListProprety/FifthStep.jsx";
+export { default as Congratulations } from "./ListProprety/Congratulations.jsx";
+export { default as SixthStep } from "./ListProprety/SixthStep.jsx";

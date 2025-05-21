@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { IoBed } from "react-icons/io5";
-import { Form, Input } from "antd";
+import { Form, Input, Button } from "antd";
 import { FaBath, FaFire, FaSwimmingPool, FaSchool } from "react-icons/fa";
 import { TbArrowsDiagonal2 } from "react-icons/tb";
 import { FaRegSnowflake } from "react-icons/fa";
@@ -10,14 +10,6 @@ import { PiFirstAidKitFill } from "react-icons/pi";
 import heatIcon from "../../assets/heatIcont.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-import {
-  MdElectricBolt,
-  MdNaturePeople,
-  MdOutlineCleaningServices,
-  MdStorefront,
-  MdBalcony,
-} from "react-icons/md";
 import { PiOvenLight, PiElevatorLight, PiPawPrintLight } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
 import { RiAlarmWarningLine } from "react-icons/ri";
@@ -30,6 +22,16 @@ import { LiaBusSolid } from "react-icons/lia";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTemperatureHigh } from "@fortawesome/free-solid-svg-icons";
 import { LuMicrowave } from "react-icons/lu";
+import { FaFireExtinguisher } from "react-icons/fa6";
+import { FaCar } from "react-icons/fa";
+gsap.registerPlugin(ScrollTrigger);
+import {
+  MdElectricBolt,
+  MdNaturePeople,
+  MdOutlineCleaningServices,
+  MdStorefront,
+  MdBalcony,
+} from "react-icons/md";
 
 const featuresConfig = [
   {
@@ -41,9 +43,13 @@ const featuresConfig = [
         label: "First Aid Kit",
         icon: <PiFirstAidKitFill />,
       },
-      { key: "FireExtinguisher", label: "Fire Extinguisher", icon: <FaFire /> },
       {
-        key: "SecurityAlarm",
+        key: "FireExtinguisher",
+        label: "Fire Extinguisher",
+        icon: <FaFireExtinguisher />,
+      },
+      {
+        key: "alarmsAndSecurity",
         label: "Security Alarm",
         icon: <RiAlarmWarningLine />,
       },
@@ -67,7 +73,7 @@ const featuresConfig = [
         icon: <MdOutlineCleaningServices />,
       },
       {
-        key: "animalAccepted",
+        key: "petsAllowed",
         label: "Pets Allowed",
         icon: <PiPawPrintLight />,
       },
@@ -87,7 +93,7 @@ const featuresConfig = [
         label: "Washing Machine",
         icon: <TbWashMachine />,
       },
-      { key: "microwave", label: "Microwave", icon: <LuMicrowave /> },
+      { key: "microwave", label: "Microwave & Oven", icon: <LuMicrowave /> },
       { key: "fridge", label: "Fridge", icon: <TbFridge /> },
     ],
   },
@@ -95,15 +101,15 @@ const featuresConfig = [
     title: "Location Benefits",
     items: [
       {
-        key: "transportClose",
+        key: "closeToTransportation",
         label: "Close to Transport",
         icon: <LiaBusSolid />,
       },
-      { key: "NaturalBue", label: "Nature View", icon: <MdNaturePeople /> },
-      { key: "BeachClos", label: "Close to Beach", icon: <TbBeach /> },
-      { key: "closeSchool", label: "Close to School", icon: <FaSchool /> },
+      { key: "natureView", label: "Nature View", icon: <MdNaturePeople /> },
+      { key: "closeToBeach", label: "Close to Beach", icon: <TbBeach /> },
+      { key: "closeToSchool", label: "Close to School", icon: <FaSchool /> },
       {
-        key: "BoutiqueClose",
+        key: "closeToSupermarket",
         label: "Close to Supermarket",
         icon: <MdStorefront />,
       },
@@ -117,13 +123,11 @@ const featuresConfig = [
     ],
   },
 ];
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
+
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
-const FourthStep = () => {
+const FourthStep = ({ updateFormData, data }) => {
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
   const rentRef = useRef(null);
@@ -139,6 +143,19 @@ const FourthStep = () => {
     }));
   };
 
+  const onFinish = (formValues) => {
+    const fullPayload = {
+      ...formValues,
+      ...features,
+    };
+
+    updateFormData(fullPayload);
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log("Form Failed:", errorInfo);
+  };
+
   return (
     <div className="flex flex-col items-center gap-6 sm:gap-10">
       <h1 className="text-textblack text-xl text-[20px] sm:text-[40px] font-bold">
@@ -148,6 +165,31 @@ const FourthStep = () => {
         Provide detailed specifications to give potential buyers or renters a
         clear understanding of your offered property
       </p>
+
+      {/* Feature Sections */}
+
+      <div className="w-full max-w-[1000px] grid grid-cols-1 sm:grid-cols-2 gap-8 ">
+        {featuresConfig.map((group, idx) => (
+          <div key={idx} className="flex flex-col gap-3 ">
+            <h2 className="text-textgray font-semibold text-md mr-[32px] ">
+              {group.title}
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {group.items.map(({ key, label, icon }) => (
+                <div
+                  key={key}
+                  onClick={() => toggleFeature(key)}
+                  className={`w-[115px] h-[73px] rounded-[23px] flex flex-col items-center justify-center cursor-pointer transition-colors text-center text-[12px] font-semibold
+                    ${features[key] ? "bg-greencol text-white" : "bg-bggray text-textgray"}`}
+                >
+                  <div className="text-[20px] mb-1">{icon}</div>
+                  {label}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
       <Form
         name="basic"
         layout="vertical"
@@ -163,14 +205,14 @@ const FourthStep = () => {
         requiredMark={false}
         className="flex flex-col gap-[15px] items-center"
       >
-        <div className="grid grid-cols-2 sm:grid-cols-3  gap-x-[15px] sm:gap-x-[80px] mt-[10px]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-[10px] mt-[10px]">
           <Form.Item
             label={
               <span className="ml-[50px] font-inter font-semibold text-[14px] text-textgray ">
-                Surface
+                area
               </span>
             }
-            name="Surface"
+            name="area"
             rules={[
               {
                 required: false,
@@ -196,7 +238,7 @@ const FourthStep = () => {
                 bedrooms
               </span>
             }
-            name="Bedrooms"
+            name="numOfRooms"
             rules={[
               {
                 required: false,
@@ -220,7 +262,7 @@ const FourthStep = () => {
                 bathrooms
               </span>
             }
-            name="Baths"
+            name="numOfBathroom"
             rules={[
               {
                 required: false,
@@ -237,32 +279,65 @@ const FourthStep = () => {
               suffix={<FaBath className="w-[18px] h-[18px] text-greencol " />}
             />
           </Form.Item>
+          <Form.Item
+            label={
+              <span className="ml-[40px] font-inter font-semibold text-[14px] text-textgray ">
+                Kitchens
+              </span>
+            }
+            name="numOfKitchen"
+            rules={[
+              {
+                required: false,
+                requiredMark: false,
+                max: "10",
+                message: "please input a valid number",
+              },
+            ]}
+          >
+            <Input
+              type="number"
+              placeholder=""
+              className="h-[45px]"
+              suffix={
+                <FaKitchenSet className="w-[18px] h-[18px] text-greencol " />
+              }
+            />
+          </Form.Item>
+          <Form.Item
+            label={
+              <span className="ml-[20px] font-inter font-semibold text-[14px] text-textgray ">
+                garage capacity
+              </span>
+            }
+            name="garageCapacity"
+            rules={[
+              {
+                required: false,
+                requiredMark: false,
+                max: "10",
+                message: "please input a valid number",
+              },
+            ]}
+          >
+            <Input
+              type="number"
+              placeholder=""
+              className="h-[45px]"
+              suffix={<FaCar className="w-[18px] h-[18px] text-greencol " />}
+            />
+          </Form.Item>
         </div>
+        <Form.Item>
+          <Button
+            htmlType="submit"
+            className="w-[120px] h-[50px] rounded-[25px] "
+            type="primary"
+          >
+            Save
+          </Button>
+        </Form.Item>
       </Form>
-
-      {/* Feature Sections */}
-      <div className="w-full max-w-[1000px] grid grid-cols-1 sm:grid-cols-2 gap-8 ">
-        {featuresConfig.map((group, idx) => (
-          <div key={idx} className="flex flex-col gap-3 ">
-            <h2 className="text-textgray font-semibold text-md mr-[32px] ">
-              {group.title}
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {group.items.map(({ key, label, icon }) => (
-                <div
-                  key={key}
-                  onClick={() => toggleFeature(key)}
-                  className={`w-[115px] h-[73px] rounded-[23px] flex flex-col items-center justify-center cursor-pointer transition-colors text-center text-[12px] font-semibold
-                    ${features[key] ? "bg-greencol text-white" : "bg-bggray text-textgray"}`}
-                >
-                  <div className="text-[20px] mb-1">{icon}</div>
-                  {label}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

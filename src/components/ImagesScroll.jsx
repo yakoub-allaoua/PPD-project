@@ -10,19 +10,13 @@ import {
   ZoomInOutlined,
   ZoomOutOutlined,
 } from "@ant-design/icons";
-import { Image, Space, Row, Col } from "antd";
-import img1 from "../assets/test/1.png";
-import img2 from "../assets/test/11.png";
-import img3 from "../assets/test/22.png";
-import img4 from "../assets/test/33.png";
-
-const imageList = [img1, img2, img3, img4];
-
-const ImagesScroll = () => {
+import { Row, Col, Image, Space } from "antd";
+const ImagesScroll = ({ images }) => {
+  console.log("images", images);
   const [current, setCurrent] = React.useState(0);
 
   const onDownload = () => {
-    const url = imageList[current];
+    const url = images[current];
     const suffix = url.slice(url.lastIndexOf("."));
     const filename = Date.now() + suffix;
     fetch(url)
@@ -78,7 +72,7 @@ const ImagesScroll = () => {
       <Row gutter={[8, 8]}>
         <Col xs={24} md={12}>
           <Image
-            src={imageList[0]}
+            src={images[0]}
             width="100%"
             height="100%"
             style={{ borderRadius: "8px" }}
@@ -86,7 +80,7 @@ const ImagesScroll = () => {
         </Col>
         <Col xs={24} md={12}>
           <Row gutter={[8, 8]}>
-            {imageList.slice(1).map((item, index) => (
+            {images.slice(1).map((item, index) => (
               <Col key={index} xs={8} md={12}>
                 <Image
                   src={item}

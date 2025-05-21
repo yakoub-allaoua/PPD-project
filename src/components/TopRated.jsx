@@ -131,9 +131,9 @@ const TopRated = () => {
           <Link
             ref={linkRef}
             to="allhouses"
-            className=" text-purplecol transition-colors hover:bg-bggray px-[4px] py-[6px] rounded-full flex flex-row gap-[3px] items-center justify-center"
+            className=" text-greencol transition-colors hover:bg-bggray px-[4px] py-[6px] rounded-full flex flex-row gap-[3px] items-center justify-center"
           >
-            <IoIosArrowDroprightCircle className="text-purplecol w-[15px] h-[15px] " />
+            <IoIosArrowDroprightCircle className="text-greencol w-[15px] h-[15px] " />
             <p className="text-[15px]">explore more</p>
           </Link>
         </div>
@@ -144,12 +144,12 @@ const TopRated = () => {
           <div
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
-            className=" w-[290px] sm:w-[350px]  border-greencol border-[3px] rounded-[10px] pb-[10px] flex flex-col gap-[15px] items-start shadow-md transition-all duration-500 hover:shadow-lg hover:-translate-y-4 "
+            className=" w-[290px] sm:w-[350px]  border-textgray border-[1px] rounded-[10px] pb-[10px] flex flex-col gap-[15px] items-start shadow-md transition-all duration-500 hover:shadow-lg hover:-translate-y-4 "
           >
             <div className="relative w-full">
               <img
                 src={house.mainImage}
-                className="rounded-none w-full h-[230px] object-cover"
+                className="rounded-none w-full h-[230px] object-cover rounded-t-[10px]"
               />
 
               <button
@@ -183,13 +183,13 @@ const TopRated = () => {
                 </h1>
               </div>
               <div className="mt-[10px] flex flex-col gap-[10px] items-start ml-[8px] ">
-                <p className="text-purplecol  font-medium text-[15px] flex items-center">
+                <p className="text-greencol  font-medium text-[15px] flex items-center">
                   For sale :{" "}
                   <span className="font-normal text-[18px] text-textblack ml-1">
                     {house.selPrice} DA
                   </span>
                 </p>
-                <p className="text-purplecol font-medium text-[15px] flex items-center">
+                <p className="text-greencol font-medium text-[15px] flex items-center">
                   For rent :{" "}
                   <span className="font-normal text-[18px] text-textblack ml-1">
                     {house.rentPrice} DA
@@ -202,7 +202,7 @@ const TopRated = () => {
               </div>
 
               <div className="mt-[5px] flex flex-row items-center gap-[20px]">
-                <div className=" px-[4px] py-[2px] text-purplecol rounded-[8px] flex flex-row gap-[8px] items-center">
+                <div className=" px-[4px] py-[2px] text-textgray rounded-[8px] flex flex-row gap-[8px] items-center">
                   <div className="bg-bggray rounded-full p-[3px]">
                     <IoBed className="w-[18px] h-[18px] " />
                   </div>
@@ -210,7 +210,7 @@ const TopRated = () => {
                     {house.numOfRooms}
                   </p>
                 </div>
-                <div className=" px-[4px] py-[2px] text-purplecol rounded-[8px] flex flex-row gap-[8px] items-center">
+                <div className=" px-[4px] py-[2px] text-textgray rounded-[8px] flex flex-row gap-[8px] items-center">
                   <div className="bg-bggray rounded-full p-[3px]">
                     <FaBath className="w-[16px] h-[16px] " />
                   </div>
@@ -218,7 +218,7 @@ const TopRated = () => {
                     {house.numOfBathroom}
                   </p>
                 </div>
-                <div className=" px-[4px] py-[2px] text-purplecol rounded-[8px] flex flex-row gap-[8px] items-center">
+                <div className=" px-[4px] py-[2px] text-textgray rounded-[8px] flex flex-row gap-[8px] items-center">
                   <div className="bg-bggray rounded-full p-[3px]">
                     <FaKitchenSet className="w-[18px] h-[18px] " />
                   </div>
@@ -226,7 +226,7 @@ const TopRated = () => {
                     {house.numOfKitchen}
                   </p>
                 </div>
-                <div className=" px-[4px] py-[2px] text-purplecol rounded-[8px] flex flex-row gap-[8px] items-center">
+                <div className=" px-[4px] py-[2px] text-textgray rounded-[8px] flex flex-row gap-[8px] items-center">
                   <div className="bg-bggray rounded-full p-[3px]">
                     <TbArrowsDiagonal2 className="w-[17px] h-[17px] " />
                   </div>
@@ -234,8 +234,8 @@ const TopRated = () => {
                 </div>
               </div>
             </div>
-            <button className="border-[2px] text-greencol rounded-[12px] w-[90px] h-[30px] transition-colors hover:border-purplecol ml-[95px] sm:ml-[120px] ">
-              <p className="text-[14px] font-semibold text-greencol transition-colors hover:text-purplecol">
+            <button className="border-[2px] text-greencol rounded-[12px] w-[90px] h-[30px] transition-colors hover:border-greencol ml-[95px] sm:ml-[120px] ">
+              <p className="text-[14px] font-semibold text-greencol ">
                 view more
               </p>
             </button>

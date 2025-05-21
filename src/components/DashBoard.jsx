@@ -15,6 +15,7 @@ const textGray = "#696A6F";
 const greenCol = "#7ABC87"; // Active & hover color
 
 const App = () => {
+  
   const navigate = useNavigate();
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
