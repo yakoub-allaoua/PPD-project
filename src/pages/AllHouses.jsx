@@ -53,7 +53,7 @@ const AllHouses = () => {
   }
 
   return (
-    <div className="mt-[50px] sm:mt-[100px] px-4">
+    <div className="mt-[100px] px-4">
       {/* Button to toggle filters */}
       <div>
         {showFilters === false && (
@@ -93,10 +93,11 @@ const AllHouses = () => {
 
         {/* Houses Grid */}
         <div
-          className={`flex-1 grid grid-cols-1 
-          sm:${showFilters ? "grid-cols-3" : "grid-cols-3"} 
-          lg:${showFilters ? "grid-cols-3" : "grid-cols-4"} 
-          gap-6 transition-all duration-500`}
+          className={`flex-1 grid 
+    grid-cols-1
+    sm:${showFilters ? "grid-cols-3" : "grid-cols-1"}
+    lg:${showFilters ? "grid-cols-3" : "grid-cols-4"}
+    gap-6 transition-all duration-500`}
         >
           {houses.map((house) => (
             <Link to={`/allhouses/${house.id}`}>

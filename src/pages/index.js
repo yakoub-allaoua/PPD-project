@@ -10,3 +10,4 @@ export { default as Checkout } from "./Checkout.jsx";
 export { default as ForgotPassword } from "./ForgotPassword.jsx";
 export { default as Dash } from "./Dash.jsx";
 export { default as AdminDash } from "./AdminDash.jsx";
+export { default as Rent } from "./Rent.jsx";

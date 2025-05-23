@@ -25,13 +25,12 @@ const SixthStep = () => {
       </p>
       <Form
         layout="vertical"
-        className="w-1/2 flex flex-col items-center"
+        className=" flex flex-col items-center"
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2  gap-[20px] sm:gap-x-[80px] ">
+        <div className="grid grid-cols-1  lg:grid-cols-2  gap-y-[7px] gap-x-[20px] sm:gap-x-[80px] ">
           <Form.Item
-            className="flex flex-col items-start"
             label={
               <p className="text-textgray font-semibold font-title ">
                 Card Number
@@ -55,7 +54,6 @@ const SixthStep = () => {
           </Form.Item>
 
           <Form.Item
-            className="flex flex-col items-start"
             label={
               <p
                 className="text-textgray font-semibold font-title 
@@ -83,9 +81,8 @@ const SixthStep = () => {
           </Form.Item>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2   gap-[20px] sm:gap-x-[80px] ">
+        <div className="grid grid-cols-1  lg:grid-cols-2  gap-y-[7px] gap-x-[20px] sm:gap-x-[80px] ">
           <Form.Item
-            className="flex flex-col items-start"
             label={
               <p className="text-textgray font-semibold font-title ">CVC</p>
             }
@@ -107,7 +104,6 @@ const SixthStep = () => {
           </Form.Item>
 
           <Form.Item
-            className="flex flex-col items-start"
             label={
               <p className="text-textgray font-semibold font-title ">
                 Phone Number

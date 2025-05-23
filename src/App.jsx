@@ -26,6 +26,7 @@ import {
   ForgotPassword,
   Dash,
   AdminDash,
+  Rent,
 } from "./pages";
 import Register from "./pages/Register";
 import UsersTable from "./components/admin/adminComponents/UsersTable";
@@ -44,6 +45,7 @@ function App() {
           <Route index element={<Landing />} />
           <Route path="allhouses" element={<AllHouses />} />
           <Route path="allhouses/:id" element={<SingleHouse />} />
+          <Route path="allhouses/:id/rent" element={<Rent />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="cart" element={<Cart />} />
           <Route path="deals" element={<Deals />} />

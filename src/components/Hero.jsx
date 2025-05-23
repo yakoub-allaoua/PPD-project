@@ -24,7 +24,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-[300px] sm:w-[530px] ml-[20px] mt-[40px] sm:mt-0">
+      <div className="hidden lg:block w-[300px] sm:w-[530px] ml-[20px] mt-[40px] sm:mt-0 ">
         <img
           src={image}
           alt="Real estate illustration"

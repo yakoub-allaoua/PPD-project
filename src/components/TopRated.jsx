@@ -6,6 +6,9 @@ import { TbArrowsDiagonal2 } from "react-icons/tb";
 import { FaKitchenSet } from "react-icons/fa6";
 import { useState } from "react";
 import image from "../assets/test/1.png";
+import top1 from "../assets/top1.jpg";
+import top2 from "../assets/top2.png.jpg";
+
 import { FaHeart } from "react-icons/fa";
 import { Button } from "antd";
 import { BlueButton } from "../ui";
@@ -28,8 +31,8 @@ const TopRatedHouses = [
   },
   {
     selPrice: 7850000,
-    rentPrice: 65000,
-    mainImage: image,
+    rentPrice: 45000,
+    mainImage: top1,
     tile: "Primary villa",
     location: "Lebiar ,Algiers",
     numOfRooms: 5,
@@ -39,8 +42,8 @@ const TopRatedHouses = [
   },
   {
     selPrice: 7850000,
-    rentPrice: 65000,
-    mainImage: image,
+    rentPrice: 25000,
+    mainImage: top2,
     tile: "Primary villa",
     location: "Lebiar ,Algiers",
     numOfRooms: 5,
@@ -183,12 +186,6 @@ const TopRated = () => {
                 </h1>
               </div>
               <div className="mt-[10px] flex flex-col gap-[10px] items-start ml-[8px] ">
-                <p className="text-greencol  font-medium text-[15px] flex items-center">
-                  For sale :{" "}
-                  <span className="font-normal text-[18px] text-textblack ml-1">
-                    {house.selPrice} DA
-                  </span>
-                </p>
                 <p className="text-greencol font-medium text-[15px] flex items-center">
                   For rent :{" "}
                   <span className="font-normal text-[18px] text-textblack ml-1">
